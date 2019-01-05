@@ -23,6 +23,9 @@ switch ($uri) {
     case '/login':
         require __DIR__ . '/views/login.php';
         break;
+    case '/logout':
+        require __DIR__ . '/views/logout.php';
+        break;
     default:
         require __DIR__ . '/views/404.php';
         break;
