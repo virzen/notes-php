@@ -1,4 +1,6 @@
-# Notes PHP
+# Notes in PHP
+
+Project based on [docker-nginx-php-mysql template](https://github.com/nanoninja/docker-nginx-php-mysql).
 
 ## Overview
 
