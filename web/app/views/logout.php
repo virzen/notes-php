@@ -1,6 +1,9 @@
 <?php
-  require __DIR__ . '/../utils/redirections.php';
+  require_once __DIR__ . '/../utils/redirections.php';
+  require_once __DIR__ . '/../utils/session.php';
 
-  session_destroy();
+  if (is_session_active()) {
+    session_destroy();
+  }
   redirectTo('/login')
 ?>

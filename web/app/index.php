@@ -3,13 +3,15 @@
 require 'utils/session.php';
 require 'utils/redirections.php';
 
+session_start();
+
 $uri = $_SERVER['REQUEST_URI'];
 
-if (!$is_session_active && $uri != '/login') {
+if (!is_session_active() && $uri != '/login') {
     redirectTo('/login');
 }
 
-if ($is_session_active && $uri == '/login') {
+if (is_session_active() && $uri == '/login') {
     redirectTo('/');
 }
 
