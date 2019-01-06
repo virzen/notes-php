@@ -6,11 +6,12 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Notes Home</title>
+        <title>Strona domowa</title>
     </head>
     <body>
-        <h1>Here will be them notes</h1>
+        <h1>Notatki</h1>
 
+        <a href="/logout">Wyloguj</a>
         <a href="/new">Dodaj notatkę</a>
 
         <?php
@@ -29,6 +30,5 @@
             }
         ?>
 
-        <a href="/logout">Logout</a>
     </body>
 </html>
