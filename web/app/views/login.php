@@ -17,9 +17,13 @@
     if (!does_user_exist($username)) {
       $new_user_id = create_user($username, $password);
 
-      start_session_for($new_user_id);
+      if ($new_user_id) {
+        start_session_for($new_user_id);
 
-      redirectTo('/');
+        redirectTo('/');
+      }
+
+      $create_user_error = true;
     }
 
     $invalid_credentials_error = true;
@@ -41,6 +45,13 @@
       <?php
         if ($invalid_credentials_error) {
           echo "Nieprawidłowa kombinacja nazwy użytkownika i hasła.";
+        }
+      ?>
+    </p>
+    <p>
+      <?php
+        if ($create_user_error) {
+          echo "Nie udało sie utworzyć użytkownika.";
         }
       ?>
     </p>

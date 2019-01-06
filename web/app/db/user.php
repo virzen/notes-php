@@ -47,10 +47,8 @@
       VALUES (:username, :password);
     ");
     $params = array(':username' => $username, ':password' => $hashed_password);
-    $statement->execute($params);
+    $success = $statement->execute($params);
 
-    // TODO: handle error
-
-    return $connection->lastInsertId();
+    return $success ? $connection->lastInsertId() : NULL;
   }
 ?>
