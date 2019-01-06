@@ -5,17 +5,17 @@ require 'utils/redirections.php';
 
 session_start();
 
-$uri = $_SERVER['REQUEST_URI'];
+$url = explode('?', $_SERVER['REQUEST_URI'])[0];
 
-if (!is_session_active() && $uri != '/login') {
+if (!is_session_active() && $url != '/login') {
     redirectTo('/login');
 }
 
-if (is_session_active() && $uri == '/login') {
+if (is_session_active() && $url == '/login') {
     redirectTo('/');
 }
 
-switch ($uri) {
+switch ($url) {
     case '/' :
         require __DIR__ . '/views/index.php';
         break;
