@@ -42,4 +42,21 @@ function create_note_for_user($user_id, $title, $content) {
   return $note_id;
 }
 
+function delete_note($note_id) {
+  global $connection;
+
+  $statement = $connection->prepare("
+    DELETE FROM notes
+    WHERE id = :note_id;
+  ");
+  $params = array(':note_id' => $note_id);
+  $success = $statement->execute($params);
+
+  if (!$success) {
+    log_error("Deleting a note failed. Error was: " . $statement.errorInfo());
+  }
+
+  return $success;
+}
+
 ?>

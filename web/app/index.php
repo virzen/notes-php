@@ -25,6 +25,9 @@ switch ($url) {
     case '/new':
         require __DIR__ . '/views/new.php';
         break;
+    case '/delete':
+        require __DIR__ . '/views/delete.php';
+        break;
     case '/login':
         require __DIR__ . '/views/login.php';
         break;

@@ -25,6 +25,7 @@
                     echo "
                         <h2>{$note['title']}</h2>
                         <p>{$note['content']}</p>
+                        <a href='/delete?note_id={$note['id']}'>Usuń</a>
                     ";
                 }
             }
