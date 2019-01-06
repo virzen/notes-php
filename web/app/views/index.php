@@ -11,6 +11,8 @@
     <body>
         <h1>Here will be them notes</h1>
 
+        <a href="/new">Dodaj notatkę</a>
+
         <?php
             $notes = get_notes_for_user(get_current_user_id());
             if (count($notes) == 0) {
