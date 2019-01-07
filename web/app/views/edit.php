@@ -1,4 +1,5 @@
 <?php
+  require __DIR__ . '/../shared/head.php';
   require_once __DIR__ . '/../utils/session.php';
   require_once __DIR__ . '/../utils/redirections.php';
   require_once __DIR__ . '/../db/notes.php';
@@ -19,11 +20,18 @@
   }
 ?>
 
-<h1>Edytuj notatkę</h1>
-<form method="post" action="">
-  <label>Tytuł</label>
-  <input type="text" name="title" value="<?php echo $title ?>" />
-  <label>Treść</label>
-  <textarea name="content"><?php echo $content ?></textarea>
-  <button type="submit">Zaktualizuj</button>
-</form>
+<!DOCTYPE html>
+<html>
+  <?php render_head('Edycja notatki') ?>
+  <body>
+    <h1>Edytuj notatkę</h1>
+
+    <form method="post" action="">
+      <label>Tytuł</label>
+      <input type="text" name="title" value="<?php echo $title ?>" />
+      <label>Treść</label>
+      <textarea name="content"><?php echo $content ?></textarea>
+      <button type="submit">Zaktualizuj</button>
+    </form>
+  </body>
+</html>

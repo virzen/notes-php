@@ -1,4 +1,6 @@
 <?php
+  require __DIR__ . '/../shared/head.php';
+
   if (!empty($_POST)) {
     require_once __DIR__ . '/../utils/session.php';
     require_once __DIR__ . '/../db/user.php';
@@ -18,26 +20,32 @@
   }
 ?>
 
-<h1>Zmiana hasła</h1>
+<!DOCTYPE html>
+<html>
+  <?php render_head('Zmiana hasła') ?>
+  <body>
+    <h1>Zmiana hasła</h1>
 
-<p>
-  <?php
-    if ($password_update_success) {
-      echo 'Hasło zmienione. <a href="/">Strona główna</a>';
-    }
-  ?>
-</p>
-<p>
-  <?php
-    if ($incorrect_password_error) {
-      echo "Podane niepoprawne aktualne hasło.";
-    }
-  ?>
-</p>
-<form action="" method="post">
-  <label>Aktualne hasło</label>
-  <input type="password" name="current-password" />
-  <label>Nowe hasło</label>
-  <input type="password" name="new-password" />
-  <button type="submit">Zmień hasło</button>
-</form>
+    <p>
+      <?php
+        if ($password_update_success) {
+          echo 'Hasło zmienione. <a href="/">Strona główna</a>';
+        }
+      ?>
+    </p>
+    <p>
+      <?php
+        if ($incorrect_password_error) {
+          echo "Podane niepoprawne aktualne hasło.";
+        }
+      ?>
+    </p>
+    <form action="" method="post">
+      <label>Aktualne hasło</label>
+      <input type="password" name="current-password" />
+      <label>Nowe hasło</label>
+      <input type="password" name="new-password" />
+      <button type="submit">Zmień hasło</button>
+    </form>
+  </body>
+</html>
