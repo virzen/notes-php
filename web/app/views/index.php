@@ -13,6 +13,7 @@
 
         <a href="/logout">Wyloguj</a>
         <a href="/new">Dodaj notatkę</a>
+        <a href="/change-password">Zmień hasło</a>
 
         <?php
             $notes = get_notes_for_user(get_current_user_id());
