@@ -1,7 +1,6 @@
 <?php
 
 require_once 'connection.php';
-require_once __DIR__ . '/../utils/error_handling.php';
 
 function get_notes_for_user($user_id) {
   global $connection;
@@ -14,9 +13,7 @@ function get_notes_for_user($user_id) {
   $params = array(':user_id' => $user_id);
   $success = $statement->execute($params);
 
-  if (!$success) {
-    log_error("Reading user's notes failed. user_id was: " . $user_id . ", error was: " . $statement.errorInfo());
-  }
+  // TODO: handle error
 
   $results = $statement->fetchAll();
 
@@ -33,9 +30,7 @@ function create_note_for_user($user_id, $title, $content) {
   $params = array(':title' => $title, ':content' => $content, ':user_id' => $user_id);
   $success = $statement->execute($params);
 
-  if (!$success) {
-    log_error("Adding a note failed. Error was: " . $statement.errorInfo());
-  }
+  // TODO: handle error
 
   $note_id = $connection->lastInsertId();
 
@@ -52,9 +47,7 @@ function delete_note($note_id) {
   $params = array(':note_id' => $note_id);
   $success = $statement->execute($params);
 
-  if (!$success) {
-    log_error("Deleting a note failed. Error was: " . $statement.errorInfo());
-  }
+  // TODO: handle error
 
   return $success;
 }
