@@ -17,6 +17,7 @@
 
         <?php
             $notes = get_notes_for_user(get_current_user_id());
+
             if (count($notes) == 0) {
                 echo "Brak notatek do wyświetlenia.";
             }
@@ -27,6 +28,7 @@
                         <h2>{$note['title']}</h2>
                         <p>{$note['content']}</p>
                         <a href='/delete?note_id={$note['id']}'>Usuń</a>
+                        <a href='/edit?note_id={$note['id']}'>Edytuj</a>
                     ";
                 }
             }

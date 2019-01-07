@@ -28,6 +28,9 @@ switch ($url) {
     case '/delete':
         require __DIR__ . '/views/delete.php';
         break;
+    case '/edit':
+        require __DIR__ . '/views/edit.php';
+        break;
     case '/change-password':
         require __DIR__ . '/views/change_password.php';
         break;
