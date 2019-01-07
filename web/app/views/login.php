@@ -27,8 +27,9 @@
 
       $create_user_error = true;
     }
-
-    $invalid_credentials_error = true;
+    else {
+      $invalid_credentials_error = true;
+    }
   }
 ?>
 
