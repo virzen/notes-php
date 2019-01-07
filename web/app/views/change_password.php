@@ -26,7 +26,9 @@
   <body>
     <h1>Zmiana hasła</h1>
 
-    <a href="/">Strona główna</a>
+    <nav>
+      <a href="/">Strona główna</a>
+    </nav>
 
     <p>
       <?php

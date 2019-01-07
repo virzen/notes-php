@@ -26,7 +26,9 @@
   <body>
     <h1>Edytuj notatkę</h1>
 
-    <a href="/">Strona główna</a>
+    <nav>
+      <a href="/">Strona główna</a>
+    </nav>
 
     <form method="post" action="">
       <label>Tytuł</label>

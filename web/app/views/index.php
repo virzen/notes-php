@@ -10,9 +10,11 @@
   <body>
     <h1>Notatki</h1>
 
-    <a href="/new">Dodaj notatkę</a>
-    <a href="/change-password">Zmień hasło</a>
-    <a href="/logout">Wyloguj</a>
+    <nav>
+      <a href="/new">Dodaj notatkę</a>
+      <a href="/change-password">Zmień hasło</a>
+      <a href="/logout">Wyloguj</a>
+    </nav>
 
     <?php
       $notes = get_notes_for_user(get_current_user_id());
