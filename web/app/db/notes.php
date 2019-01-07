@@ -33,11 +33,11 @@ function get_note($note_id) {
   $params = array(':note_id' => $note_id);
   $statement->execute($params);
 
-  if (!$success) {
+  $note = $statement->fetch();
+
+  if (!$note) {
     redirectTo('/error');
   }
-
-  $note = $statement->fetch();
 
   return $note;
 }
