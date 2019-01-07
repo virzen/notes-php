@@ -1,5 +1,5 @@
 <?php
-  require __DIR__ . '/../shared/head.php';
+  require __DIR__ . '/../shared.php';
   require_once __DIR__ . '/../utils/session.php';
   require_once __DIR__ . '/../utils/redirections.php';
   require_once __DIR__ . '/../db/notes.php';
@@ -14,22 +14,18 @@
   }
 ?>
 
-<!DOCTYPE html>
-<html>
-  <?php render_head('Nowa notatka') ?>
-  <body>
-    <h1>Utwórz notatkę</h1>
+<?php render_head('Nowa notatka'); ?>
 
-    <nav>
-      <a href="/">Strona główna</a>
-    </nav>
+<nav>
+  <a href="/">Strona główna</a>
+</nav>
 
-    <form method="post" action="">
-      <label>Tytuł</label>
-      <input type="text" name="title" />
-      <label>Treść</label>
-      <textarea name="content"></textarea>
-      <button type="submit">Utwórz</button>
-    </form>
-  </body>
-</html>
+<form method="post" action="">
+  <label>Tytuł</label>
+  <input type="text" name="title" />
+  <label>Treść</label>
+  <textarea name="content"></textarea>
+  <button type="submit">Utwórz</button>
+</form>
+
+<?php render_footer(); ?>
