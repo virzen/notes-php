@@ -34,6 +34,9 @@ switch ($url) {
     case '/change-password':
         require __DIR__ . '/views/change_password.php';
         break;
+    case '/error':
+        require __DIR__ . '/views/error.php';
+        break;
     case '/login':
         require __DIR__ . '/views/login.php';
         break;

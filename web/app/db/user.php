@@ -80,6 +80,8 @@
     $params = array(':new_password' => $hashed_new_password, ':user_id' => $user_id);
     $success = $statement->execute($params);
 
-    return $success;
+    if (!$success) {
+      redirectTo('/error');
+    }
   }
 ?>

@@ -13,7 +13,9 @@ function get_notes_for_user($user_id) {
   $params = array(':user_id' => $user_id);
   $success = $statement->execute($params);
 
-  // TODO: handle error
+  if (!$success) {
+    redirectTo('/error');
+  }
 
   $results = $statement->fetchAll();
 
@@ -31,7 +33,9 @@ function get_note($note_id) {
   $params = array(':note_id' => $note_id);
   $statement->execute($params);
 
-  // TODO: handle error
+  if (!$success) {
+    redirectTo('/error');
+  }
 
   $note = $statement->fetch();
 
@@ -48,7 +52,9 @@ function create_note_for_user($user_id, $title, $content) {
   $params = array(':title' => $title, ':content' => $content, ':user_id' => $user_id);
   $success = $statement->execute($params);
 
-  // TODO: handle error
+  if (!$success) {
+    redirectTo('/error');
+  }
 
   $note_id = $connection->lastInsertId();
 
@@ -66,7 +72,9 @@ function update_note($note_id, $new_title, $new_content) {
   $params = array(':title' => $new_title, ':content' => $new_content, ':note_id' => $note_id);
   $success = $statement->execute($params);
 
-  // TODO: handle error
+  if (!$success) {
+    redirectTo('/error');
+  }
 
   return $success;
 }
@@ -81,7 +89,9 @@ function delete_note($note_id) {
   $params = array(':note_id' => $note_id);
   $success = $statement->execute($params);
 
-  // TODO: handle error
+  if (!$success) {
+    redirectTo('/error');
+  }
 
   return $success;
 }
