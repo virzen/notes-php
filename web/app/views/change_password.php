@@ -23,7 +23,7 @@
 <p>
   <?php
     if ($password_update_success) {
-      echo "Hasło zmienione.";
+      echo 'Hasło zmienione. <a href="/">Strona główna</a>';
     }
   ?>
 </p>
