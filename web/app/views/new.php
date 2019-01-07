@@ -20,6 +20,8 @@
   <body>
     <h1>Utwórz notatkę</h1>
 
+    <a href="/">Strona główna</a>
+
     <form method="post" action="">
       <label>Tytuł</label>
       <input type="text" name="title" />
