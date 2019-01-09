@@ -66,7 +66,7 @@ function update_note($note_id, $new_title, $new_content) {
 
   $statement = $connection->prepare("
     UPDATE notes
-    SET title = :title, content = :content
+    SET title = :title, content = :content, last_modification_date = NOW()
     WHERE id = :note_id;
   ");
   $params = array(':title' => $new_title, ':content' => $new_content, ':note_id' => $note_id);
