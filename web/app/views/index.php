@@ -23,6 +23,7 @@
     foreach ($notes as $note) {
       echo "
         <h2 class='note-title'><span class='note-title-text'>{$note['title']}</span></h2>
+        <time>Last modified at: {$note['last_modification_date']}</time>
         <p class='note-content'>{$note['content']}</p>
         <a href='/delete?note_id={$note['id']}'>Usuń</a>
         <a href='/edit?note_id={$note['id']}'>Edytuj</a>

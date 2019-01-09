@@ -87,3 +87,7 @@ textarea {
 footer {
   margin-top: 4rem;
 }
+
+time {
+  font-size: 0.875rem;
+}
