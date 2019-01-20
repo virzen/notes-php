@@ -22,15 +22,15 @@ function get_notes_for_user($user_id) {
   return $results;
 }
 
-function get_note($note_id) {
+function get_note_of_user($note_id, $user_id) {
   global $connection;
 
   $statement = $connection->prepare("
     SELECT *
     FROM notes
-    where id = :note_id
+    WHERE id = :note_id AND user_id = :user_id
   ");
-  $params = array(':note_id' => $note_id);
+  $params = array(':note_id' => $note_id, ':user_id' => $user_id);
   $statement->execute($params);
 
   $note = $statement->fetch();

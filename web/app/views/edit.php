@@ -14,7 +14,7 @@
     redirectTo('/');
   }
   else {
-    $note = get_note($note_id);
+    $note = get_note_of_user($note_id, get_current_user_id());
     $title = $note['title'];
     $content = $note['content'];
   }
